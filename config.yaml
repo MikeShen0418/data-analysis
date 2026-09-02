@@ -1,0 +1,140 @@
+project:
+  data_dir: data
+  output_dir: outputs
+  cache_dir: cache
+
+sec:
+  user_agent: "REPLACE_WITH_YOUR_NAME your.email@example.com"
+  max_requests_per_second: 4.0
+  cache_hours: 12
+  timeout_seconds: 45
+  retries: 4
+
+analysis:
+  history_years: 7
+  hurdle_rate: 0.15
+  default_ai_asset_life_years:
+    downside: 3.0
+    base: 4.0
+    upside: 5.0
+  default_maintenance_capex_pct:
+    downside: 0.05
+    base: 0.03
+    upside: 0.02
+  default_tax_rate: 0.21
+  minimum_manual_confidence: 0.25
+  snippet_filings_per_company: 2
+  capital_owner_layers:
+    - hyperscaler
+    - hyperscaler_application
+    - cloud
+  downstream_signal_layers:
+    - model_provider
+    - application
+    - hyperscaler_application
+
+manual_entities:
+  - ticker: OPENAI
+    name: OpenAI
+    layer: model_provider
+  - ticker: ANTHROPIC
+    name: Anthropic
+    layer: model_provider
+
+universe:
+  - ticker: NVDA
+    name: NVIDIA
+    cik: 1045810
+    layer: chips
+  - ticker: AMD
+    name: AMD
+    cik: 2488
+    layer: chips
+  - ticker: AVGO
+    name: Broadcom
+    cik: 1730168
+    layer: networking_custom_silicon
+  - ticker: MU
+    name: Micron
+    cik: 723125
+    layer: memory
+  - ticker: MSFT
+    name: Microsoft
+    cik: 789019
+    layer: hyperscaler
+  - ticker: AMZN
+    name: Amazon
+    cik: 1018724
+    layer: hyperscaler
+  - ticker: GOOGL
+    name: Alphabet
+    cik: 1652044
+    layer: hyperscaler
+  - ticker: META
+    name: Meta
+    cik: 1326801
+    layer: hyperscaler_application
+  - ticker: ORCL
+    name: Oracle
+    cik: 1341439
+    layer: cloud
+  - ticker: PLTR
+    name: Palantir
+    cik: 1321655
+    layer: application
+  - ticker: NOW
+    name: ServiceNow
+    cik: 1373715
+    layer: application
+  - ticker: ADBE
+    name: Adobe
+    cik: 796343
+    layer: application
+  - ticker: INTU
+    name: Intuit
+    cik: 896878
+    layer: application
+  - ticker: CRWD
+    name: CrowdStrike
+    cik: 1535527
+    layer: application
+  - ticker: PANW
+    name: Palo Alto Networks
+    cik: 1327567
+    layer: application
+
+keyword_groups:
+  demand:
+    - "demand"
+    - "backlog"
+    - "capacity constrained"
+    - "supply constrained"
+    - "utilization"
+    - "bookings"
+  monetization:
+    - "artificial intelligence revenue"
+    - "ai revenue"
+    - "annual recurring revenue"
+    - "annual contract value"
+    - "remaining performance obligations"
+    - "paid users"
+    - "production deployment"
+  capex:
+    - "capital expenditures"
+    - "data center"
+    - "purchase commitments"
+    - "supply commitments"
+    - "property and equipment"
+  financing_risk:
+    - "vendor financing"
+    - "guarantee"
+    - "extended payment terms"
+    - "prepayment"
+    - "financing commitment"
+  return_on_investment:
+    - "productivity"
+    - "cost savings"
+    - "gross margin"
+    - "operating margin"
+    - "return on investment"
+    - "customer savings"

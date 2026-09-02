@@ -1,0 +1,11 @@
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+numpy-financial>=1.0,<2.0
+requests>=2.31,<3.0
+PyYAML>=6.0,<7.0
+beautifulsoup4>=4.12,<5.0
+lxml>=5.0,<7.0
+duckdb>=1.0,<2.0
+streamlit>=1.37,<2.0
+plotly>=5.24,<7.0
+matplotlib>=3.8,<4.0
